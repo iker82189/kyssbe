@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kyssbe</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #000;
+      color: #FFD700;
+      scroll-behavior: smooth;
+    }
+    header {
+      background: #111;
+      padding: 1rem;
+      text-align: center;
+      font-size: 2rem;
+      font-weight: bold;
+      box-shadow: 0 0 10px #FFD700;
+    }
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      background: #1a1a1a;
+      padding: 1rem 0;
+    }
+    nav a {
+      color: #FFD700;
+      text-decoration: none;
+      font-weight: bold;
+      padding: 10px 20px;
+      background-color: #444;
+      border-radius: 5px;
+      transition: 0.3s;
+    }
+    nav a:hover {
+      background-color: #FFD700;
+      color: black;
+    }
+    section {
+      padding: 2rem;
+      text-align: center;
+      display: none; /* Ocultar secciones por defecto */
+    }
+    section.active {
+      display: block; /* Mostrar la sección activa */
+    }
+    .product {
+      margin: 1.5rem 0;
+    }
+    .product img {
+      width: 150px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px #FFD700;
+    }
+    .product h3 {
+      margin: 0.5rem 0;
+    }
+    .price {
+      font-size: 1.2rem;
+      margin-bottom: 0.5rem;
+    }
+    .btn {
+      background: #FFD700;
+      color: black;
+      padding: 0.5rem 1rem;
+      border: none;
+      border-radius: 5px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    .btn:hover {
+      background: white;
+    }
+  </style>
+</head>
+<body>
+  <header>Kyssbe</header>
+  <nav>
+    <a href="#perfumes" onclick="showSection('perfumes')">Perfumes</a>
+    <a href="#airpods" onclick="showSection('airpods')">AirPods</a>
+    <a href="#proveedores" onclick="showSection('proveedores')">Proveedores</a>
+  </nav>
+
+  <section id="perfumes" class="section">
+    <h2>Perfumes</h2>
+    <div class="product">
+      <img src="https://i.imgur.com/UeMbc79.jpg" alt="Dior Sauvage" />
+      <h3>Dior Sauvage EDT</h3>
+      <p class="price">40€</p>
+      <a class="btn" href="https://wa.me/34623437426?text=Hola!%20Quiero%20comprar%20el%20perfume%20Dior%20Sauvage">Comprar</a>
+    </div>
+    <div class="product">
+      <img src="https://i.imgur.com/ZhTlh7V.jpg" alt="JPG Ultra Male" />
+      <h3>JPG Ultra Male</h3>
+      <p class="price">40€</p>
+      <a class="btn" href="https://wa.me/34623437426?text=Hola!%20Quiero%20comprar%20el%20perfume%20JPG%20Ultra%20Male">Comprar</a>
+    </div>
+    <div class="product">
+      <img src="https://i.imgur.com/3n3EwTt.jpg" alt="Versace Eros Flame" />
+      <h3>Versace Eros Flame</h3>
+      <p class="price">40€</p>
+      <a class="btn" href="https://wa.me/34623437426?text=Hola!%20Quiero%20comprar%20el%20perfume%20Versace%20Eros%20Flame">Comprar</a>
+    </div>
+  </section>
+
+  <section id="airpods" class="section">
+    <h2>AirPods</h2>
+    <div class="product">
+      <img src="https://i.imgur.com/0hFDRC1.png" alt="AirPods Pro 2" />
+      <h3>AirPods Pro 2</h3>
+      <p class="price">45€</p>
+      <a class="btn" href="https://wa.me/34623437426?text=Hola!%20Quiero%20comprar%20los%20AirPods%20Pro%202">Comprar</a>
+    </div>
+  </section>
+
+  <section id="proveedores" class="section">
+    <h2>Proveedores</h2>
+    <p>AirPods, Vapers, Zapatillas y Ropa</p>
+    <p class="price">5€ cada uno</p>
+    <a class="btn" href="https://wa.me/34623437426?text=Hola!%20Estoy%20interesado%20en%20los%20proveedores%20de%20AirPods,%20Vapers,%20Zapatillas%20y%20Ropa">Comprar</a>
+  </section>
+
+  <script>
+    // Función para mostrar la sección correspondiente
+    function showSection(sectionId) {
+      // Ocultar todas las secciones
+      const sections = document.querySelectorAll('.section');
+      sections.forEach(section => section.classList.remove('active'));
+
+      // Mostrar la sección seleccionada
+      const selectedSection = document.getElementById(sectionId);
+      selectedSection.classList.add('active');
+    }
+
+    // Mostrar la primera sección por defecto
+    document.addEventListener('DOMContentLoaded', () => {
+      showSection('perfumes');
+    });
+  </script>
+</body>
+</html>
